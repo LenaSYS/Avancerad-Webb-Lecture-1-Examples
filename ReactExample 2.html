@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>React Example</title>
+</head>
+<body>
+<script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+<script src="https://unpkg.com/react@16/umd/react.development.js" crossorigin></script>
+<script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js" crossorigin></script>
+<div id="content"></div>
+<script type="text/babel">
+  var product="Car";
+  var element = <h1>We Sell: {product}</h1>;
+
+  ReactDOM.render(
+  element,
+  document.getElementById('content')
+  );   
+</script>
+</body>
+</html>
