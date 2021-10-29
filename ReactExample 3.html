@@ -9,13 +9,17 @@
 <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js" crossorigin></script>
 <div id="content"></div>
 <script type="text/babel">
-  var product="Car";
-  var element = <h1>We Sell: {product}</h1>;
 
-  ReactDOM.render(
-  element,
-  document.getElementById('content')
-  );   
+function tick() {
+  const element = (
+    <div>
+      <h1>Clock</h1>
+      <h2>{new Date().toLocaleTimeString()}</h2>
+    </div>
+  );
+  ReactDOM.render(element, document.getElementById('content'));}
+
+setInterval(tick, 1000);
 
 </script>
 </body>
