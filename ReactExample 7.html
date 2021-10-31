@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+      .Red {color:red}
+      .Green {color:green}
+  </style>
+<title>React Example</title>
+</head>
+<body>
+<script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+<script src="https://unpkg.com/react@16/umd/react.development.js" crossorigin></script>
+<script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js" crossorigin></script>
+<div id="content"></div>
+<script type="text/babel">
+
+class Product extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      color: props.color,
+      name: props.name
+    };  
+    this.handleClickRed = this.handleClickRed.bind(this);
+    this.handleClickGreen = this.handleClickGreen.bind(this);
+  }
+  
+  handleClickRed() {
+      this.setState({color:"Green"});
+  }  
+
+  handleClickGreen() {
+      this.setState({color:"Red"});
+  }  
+
+  render() {
+    if(this.state.color=="Red"){
+    return (
+        <button className={this.state.color} onClick={this.handleClickRed}>{this.state.name}</button>
+      );
+    }else{
+      return (
+        <button className={this.state.color} onClick={this.handleClickGreen}>{this.state.name}</button>
+      );
+    }
+  }
+}
+
+ReactDOM.render(
+  <Product name="car A" color="Red" />,  document.getElementById('content')
+);
+
+</script>
+</body>
+</html>
