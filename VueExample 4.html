@@ -1,0 +1,23 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="index.css">
+        <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    </head>
+    <body>
+        <div id="app">
+                <product name="Car A"></product>
+                <product name="Car B"></product>                
+        </div>
+            
+        <script>
+          Vue.component('product', {
+            props: ['name'],
+            template: '<h1>{{name}}</h1>'
+          })
+
+          var app = new Vue({
+            el: '#app'
+          })        
+        </script>
+    </body>
+</html>
